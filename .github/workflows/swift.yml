@@ -12,15 +12,15 @@ jobs:
     # job이 실행될 환경: https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners 
     # macOS Big Sur 11
     # macos-latest OR macos-11
-    runs-on: macos-12 
+    runs-on: macos-11
     
     # job의 일부로 실행될 일런의 task
     steps:
     
     - uses: actions/checkout@v3
     
-    - name: Force Xcode 14
-      run: sudo xcode-select -s /Applications/Xcode_14.0.1.app
+    - name: Force Xcode 13
+      run: sudo xcode-select -s /Applications/Xcode_13.4.1.app
        
     - name: Start xcode build
       run: |
