@@ -3,9 +3,9 @@ name: Run build
 on:
 # develop 브랜치에 push, pull_request Event 발생 시 jobs를 실행합니다.
   push:
-    branches: [ "develop" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "master" ]
 
 # Workflow가 실행할 jobs
 jobs:
