@@ -15,7 +15,14 @@ jobs:
     # job의 일부로 실행될 일런의 task
     steps: 
     - uses: actions/checkout@v3
-    
+
+    - name: Cache Primes
+      id: cache-primes
+      uses: actions/cache@v3
+      with:
+        path: /Users/runner/Library/Developer/Xcode/DerivedData/**/SourcePackages/checkouts 
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+
     - name : Decrypt file
       env:
         ENCRYPTED_SECURITY_FILE_PATH: ${{ '.github/secrets/Security.xcconfig.gpg' }}
