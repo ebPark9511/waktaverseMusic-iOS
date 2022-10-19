@@ -24,6 +24,7 @@ jobs:
        
     - name: Start xcode build
       run: |
+        echo `ls .`
         xcodebuild clean build |
         -project WaktaverseMusic/WaktaverseMusic.xcodeproj |
         -scheme WaktaverseMusic -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max,OS=15.5'
