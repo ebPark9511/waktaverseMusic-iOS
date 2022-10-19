@@ -1,0 +1,30 @@
+name: Run build
+
+on:
+# develop 브랜치에 push, pull_request Event 발생 시 jobs를 실행합니다.
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+# Workflow가 실행할 jobs
+jobs:
+  build:
+    # job이 실행될 환경: https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners 
+    # macOS Big Sur 11
+    # macos-latest OR macos-11
+    runs-on: macos-12 
+    
+    # job의 일부로 실행될 일런의 task
+    steps: 
+    - uses: actions/checkout@v3
+    
+    - name: Force Xcode 14
+			#https://github.com/kean/Nuke/issues/609
+			#run: sudo xcode-select -s /Applications/Xcode_14.0.1.app
+      run: sudo xcode-select -s /Applications/Xcode_13.4.1.app
+
+       
+    - name: Start Xcode build
+      run: |
+        xcodebuild clean build -project WaktaverseMusic/WaktaverseMusic.xcodeproj -scheme WaktaverseMusic -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max,OS=15.5'
