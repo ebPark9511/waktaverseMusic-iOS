@@ -1,4 +1,4 @@
-name: Run build
+name: build
 
 on:
 # develop 브랜치에 push, pull_request Event 발생 시 jobs를 실행합니다.
