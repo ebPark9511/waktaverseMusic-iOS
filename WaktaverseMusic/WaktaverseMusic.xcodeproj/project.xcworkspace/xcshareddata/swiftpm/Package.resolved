@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/exyte/ScalingHeaderScrollView.git",
       "state" : {
-        "revision" : "79dc66156e9bbca278f33d40e3d3a1555b8ae755",
-        "version" : "0.0.5"
+        "revision" : "7cf560e8a55fd932149484e18347f0c1b3ceb411",
+        "version" : "0.0.6"
       }
     },
     {
