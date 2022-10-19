@@ -3,9 +3,9 @@ name: Run build
 on:
 # develop 브랜치에 push, pull_request Event 발생 시 jobs를 실행합니다.
   push:
-    branches: [ "master" ]
+    branches: [ "develop" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "develop" ]
 
 # Workflow가 실행할 jobs
 jobs:
@@ -24,8 +24,8 @@ jobs:
     
     - name : Decrypt file
       run: |  
-        gpg -d -o "$DECRYPTED_SECURITY_FILE_PATH" --pinentry-mode=loopback --passphrase "$SECURITY_ENCRYPTION_KEY" "$ENCRYPTED_SECURITY_FILE_PATH"
         echo `ls ./WaktaverseMusic/`
+        gpg -d -o "$DECRYPTED_SECURITY_FILE_PATH" --pinentry-mode=loopback --passphrase "$SECURITY_ENCRYPTION_KEY" "$ENCRYPTED_SECURITY_FILE_PATH"
 
     - name: Force Xcode 13
       run: sudo xcode-select -s /Applications/Xcode_13.4.1.app
