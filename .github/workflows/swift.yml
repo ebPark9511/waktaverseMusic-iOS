@@ -18,9 +18,11 @@ jobs:
     
     - name : Decrypt file
       env:
+        ENCRYPTED_SECURITY_FILE_PATH: ${{ '.github/secrets/Security.xcconfig.gpg' }}
+        DECRYPTED_SECURITY_FILE_PATH: ${{ 'WaktaverseMusic/Security.xcconfig' }}
         SECURITY_ENCRYPTION_KEY: ${{ secrets.SECURITY_ENCRYPTION_PWD }} 
       run: |  
-        gpg -d -o "WaktaverseMusic/Security.xcconfig" --pinentry-mode=loopback --passphrase "$SECURITY_ENCRYPTION_KEY" ".github/secrets/Security.xcconfig.gpg"
+        gpg -d -o "$DECRYPTED_SECURITY_FILE_PATH" --pinentry-mode=loopback --passphrase "$SECURITY_ENCRYPTION_KEY" "$ENCRYPTED_SECURITY_FILE_PATH
 
     - name: Force Xcode 13
       run: sudo xcode-select -s /Applications/Xcode_13.4.1.app
