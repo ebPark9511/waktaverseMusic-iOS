@@ -12,11 +12,6 @@ jobs:
   build:
     runs-on: macos-12 
     
-    env: # 환경변수
-      ENCRYPTED_SECURITY_FILE_PATH: ${{  }}
-      DECRYPTED_SECURITY_FILE_PATH: ${{  }} 
-      
-    
     # job의 일부로 실행될 일런의 task
     steps: 
     - uses: actions/checkout@v3
