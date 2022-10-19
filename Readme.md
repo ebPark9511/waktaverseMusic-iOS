@@ -11,9 +11,6 @@
 <br>
 
 ### 사용 툴 
-
-[![Run build](https://github.com/ebPark9511/waktaverseMusic-iOS/actions/workflows/swift.yml/badge.svg)](https://github.com/ebPark9511/waktaverseMusic-iOS/actions/workflows/swift.yml)
-
 <br>
 
 <p align="center">
