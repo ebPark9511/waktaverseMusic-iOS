@@ -3,6 +3,9 @@ name: deploy
 on:
   push:
     branches: [ "release/*", "master" ]
+    
+  pull_request: # 테스트 용으로 필요
+    branches: [ "release/*", "master" ] 
 
 jobs:
   build:
